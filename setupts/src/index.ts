@@ -1,0 +1,79 @@
+class User {
+  // email: string;
+  // username: string;
+  readonly phone: number = 1;
+  private courseCount: number = 1;
+
+  constructor(public email: string, private username: string) {
+    this.email = email;
+    this.username = username;
+  }
+
+  get courseCC(): string {
+    return `This is a getter for ya ${this.courseCount}`;
+  }
+
+  set ccVal(num: number) {
+    this.courseCount = num;
+  }
+}
+
+const hero = new User("hero@mail.com", "hero");
+
+interface camera {
+  rearCamera: string;
+  frontCamera: string;
+  photosPerMin: number;
+  getexactPhoto(): number;
+}
+
+class mobile implements camera {
+  // rearCamera: string;
+  // frontCamera: string;
+  // photosPerMin: number;
+  getexactPhoto(): number {
+    return 10000;
+  }
+  constructor(
+    public rearCamera: string,
+    public frontCamera: string,
+    public photosPerMin: number
+  ) {
+    this.frontCamera = frontCamera;
+    this.rearCamera = rearCamera;
+    this.photosPerMin = photosPerMin;
+  }
+}
+
+
+
+// abstract class
+abstract class TakePhoto {
+    constructor(public howManyPhoto: number, public device: string) {
+        console.log(howManyPhoto, device);
+    }
+
+    abstract getAiele(): void;
+    getReelTime(): number{
+        // Lots of login return over here
+        return 8;
+    }
+}
+
+class instagram extends TakePhoto {
+    // public howManyPhoto: number
+    // device: string;
+    public filter: boolean;
+    constructor(photoCount: number, device: string, filter: boolean) {
+        super(photoCount, device);
+        this.filter = filter;
+    }
+
+    getAiele(): void {
+        
+    }
+
+    getReelTime(): number {
+        return 8;
+    }
+}
