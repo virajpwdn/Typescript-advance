@@ -77,3 +77,26 @@ class instagram extends TakePhoto {
         return 8;
     }
 }
+
+function indentityOne<Type> (val: Type): Type {
+    return val;
+}
+
+indentityOne("true")
+indentityOne(1)
+
+function indetityTwo<T>(val: T): T{
+    return val;
+}
+
+const variable=<T>  (val: T) => {
+    return val;
+}
+
+function getUserId<T> (users: T[]) : T {
+    return users[1];
+}
+
+const getData = <T> (data: Array<T>): T => {
+    return data[2];
+}
