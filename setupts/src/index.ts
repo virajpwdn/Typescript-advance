@@ -100,3 +100,27 @@ function getUserId<T> (users: T[]) : T {
 const getData = <T> (data: Array<T>): T => {
     return data[2];
 }
+
+
+interface database {
+    connection: string,
+    password: string,
+    username: string,
+}
+
+
+function generics<T, U extends database> (val: T, data: U) : object {
+    return {
+        message: "Hola"
+    }
+}
+
+generics(1, {connection: "mongostring", password: "atlaspassword", username: "HOLA"} )
+
+function narrowing(data: string | number | null): number | string {
+    if(typeof data === "string") {
+        return data.toUpperCase();
+    }
+    if(data) return data + 10;
+    
+}
